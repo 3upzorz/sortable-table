@@ -1,0 +1,76 @@
+{
+  "result": {
+    "6069999532109": {
+      "status": 0,
+      "results": 1,
+      "impressions": 9,
+      "cpr": 0,
+      "reach": 0,
+      "spend": 0.27,
+      "end_date": 0,
+      "social_clicks": 0,
+      "action#video_view": 0,
+      "action#video_play": 0
+    },
+    "6069999522309": {
+      "status": 0,
+      "results": 14,
+      "impressions": 109,
+      "cpr": 0,
+      "reach": 0,
+      "spend": 3.0699999999999994,
+      "end_date": 0,
+      "social_clicks": 1,
+      "action#video_view": 0,
+      "action#video_play": 0
+    },
+    "6069999530109": {
+      "status": 0,
+      "results": 14,
+      "impressions": 66,
+      "cpr": 0,
+      "reach": 0,
+      "spend": 1.9000000000000006,
+      "end_date": 0,
+      "social_clicks": 1,
+      "action#video_view": 0,
+      "action#video_play": 0
+    },
+    "6069999528109": {
+      "status": 0,
+      "results": 50,
+      "impressions": 455,
+      "cpr": 0,
+      "reach": 0,
+      "spend": 10.049999999999999,
+      "end_date": 0,
+      "social_clicks": 7,
+      "action#video_view": 0,
+      "action#video_play": 0
+    },
+    "6069999526109": {
+      "status": 0,
+      "results": 162,
+      "impressions": 843,
+      "cpr": 0,
+      "reach": 0,
+      "spend": 29.13,
+      "end_date": 0,
+      "social_clicks": 34,
+      "action#video_view": 0,
+      "action#video_play": 0
+    },
+    "6069999517109": {
+      "status": 0,
+      "results": 85,
+      "impressions": 977,
+      "cpr": 0,
+      "reach": 0,
+      "spend": 15.7,
+      "end_date": 0,
+      "social_clicks": 11,
+      "action#video_view": 0,
+      "action#video_play": 0
+    }
+  }
+}
