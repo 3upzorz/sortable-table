@@ -8,6 +8,7 @@ module.exports = {
       { test: /\.js$/, use: 'babel-loader' }
     ]
   },
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
     headers: {
       'Access-Control-Allow-Origin': '*'
