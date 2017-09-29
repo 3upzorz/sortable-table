@@ -1,28 +1,16 @@
 import React, { Component } from 'react';
 import SortableTable from './components/SortableTable/SortableTable';
 import TextControl from './components/TextControl/TextControl';
+import { formatTableData } from './utils/data';
 import mockTableData from '../../mock/tableData.json';
 
-const calculateCtr = (row) => {
-  let ctr;
-
-  if (row.social_clicks !== undefined && row.impressions !== undefined) {
-    ctr = (100 / row.impressions) * row.social_clicks;
-  } else if (row.clicks !== undefined && row.impressions !== undefined) {
-    ctr = (100 / row.impressions) * row.clicks;
+const determineSortDirection = (sortedAsc) => {
+  if (sortedAsc === false) {
+    return 'desc';
+  } else if (sortedAsc === true) {
+    return 'asc';
   }
-
-  if (ctr !== undefined) {
-    return Object.assign(row, { ctr });
-  }
-  return row;
-}
-
-const formatTableData = (data) => {
-  return Object.keys(data.result).map((ID) => {
-    const row = calculateCtr(data.result[ID]);
-    return Object.assign({ ID }, row);
-  });
+  return undefined;
 }
 
 export default class App extends Component {
@@ -54,17 +42,21 @@ export default class App extends Component {
   }
 
   update(data) {
-    console.log(data);
     const tableData = formatTableData(data);
-    this.setState({ tableData });
+    this.setState({ tableData, sortedColumn: undefined, sortedAsc: undefined });
   }
 
   render() {
-    const { tableData } = this.state;
+    const { tableData, sortedColumn, sortedAsc } = this.state;
     return (
       <div>
         <h1>Table Sort</h1>
-        <SortableTable data={tableData} onSort={this.sort} />
+        <SortableTable
+          data={tableData}
+          onSort={this.sort}
+          sortedColumn={sortedColumn}
+          sortDirection={determineSortDirection(sortedAsc)}
+        />
         <TextControl onUpdate={this.update} />
       </div>
     );

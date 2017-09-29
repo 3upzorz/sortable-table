@@ -1,5 +1,33 @@
 import React from 'react';
+import FaSort from 'react-icons/lib/fa/sort';
+import FaSortAsc from 'react-icons/lib/fa/sort-asc';
+import FaSortDesc from 'react-icons/lib/fa/sort-desc';
 import { formatColumnData } from '../../utils/format';
+
+const SortIcon = (props) => {
+  switch (props.sortDirection) {
+    case 'asc': {
+      return <FaSortAsc />;
+    }
+    case 'desc': {
+      return <FaSortDesc />;
+    }
+    default: {
+      return <FaSort />;
+    }
+  }
+}
+
+const TableHeading = (props) => {
+  const { sortDirection, onClick, heading } = props;
+  return (
+    <td
+      onClick={onClick(heading)}
+    >
+      {heading} <SortIcon sortDirection={sortDirection} />
+    </td>
+  )
+}
 
 const TableRow = (props) => {
   const { data } = props;
@@ -14,7 +42,7 @@ const TableRow = (props) => {
 }
 
 const Table = (props) => {
-  const { data, onSort } = props;
+  const { data, onSort, sortedColumn, sortDirection } = props;
   const tableHeadings = Object.keys(data[0]);
 
   return <table style={{ width: '100%' }}>
@@ -22,12 +50,12 @@ const Table = (props) => {
       <tr>
         {
           tableHeadings.map((heading) => (
-            <td
+            <TableHeading
               key={`heading_${heading}`}
-              onClick={onSort(heading)}
-            >
-              {heading}
-            </td>
+              heading={heading}
+              onClick={onSort}
+              sortDirection={(sortedColumn === heading) ? sortDirection : undefined}
+            />
           ))
         }
       </tr>

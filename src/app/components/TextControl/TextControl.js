@@ -20,6 +20,7 @@ export default class TextControl extends Component {
   render() {
     return (
       <div>
+        <p>{'Please enter your data in a format like: { "result": { "<your_row_id>": { ...data } } }'}</p>
         <textarea 
           style={{ display: 'block', width: '100%' }} 
           rows="10" 
