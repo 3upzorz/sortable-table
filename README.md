@@ -5,7 +5,8 @@ Demo for a sortable table in React
 
 1) clone this repo
 2) navigate to directory
-3) run `npm start`
+3) `npm install`
+3) `npm start`
 4) go to `http://localhost:3000`
 
 \* May require node v8 \*
